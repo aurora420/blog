@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const repoName = "blog" 
 const nextConfig = {
     output: "export",
     images: {
