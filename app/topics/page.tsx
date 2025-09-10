@@ -6,51 +6,45 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { BrainCircuit, Cpu, Eye, Github, Linkedin, Mail, Rss, Twitter } from "lucide-react"
 import { useRouter } from "next/navigation"
 
-// Static topic data for GitHub Pages
+// Static topic data
 const topics = [
   {
-    title: "Generative AI",
-    description: "Explore the latest advancements in generative AI models, including GANs, diffusion models, and more.",
+    title: "Unity",
+    description: "Learning journey of Unity for AR/VR and interactive experiences.",
     icon: <BrainCircuit className="h-6 w-6" />,
-    count: 12,
-    slug: "generative-ai",
+    count: 0,
+    slug: "unity",
   },
   {
-    title: "Computer Vision",
+    title: "Biomedical Science",
     description:
-      "Discover how AI is revolutionizing image and video analysis, object detection, and scene understanding.",
+      "Exploring the novel discoveries and advancements in biomedical science and healthcare technology.",
     icon: <Eye className="h-6 w-6" />,
-    count: 8,
-    slug: "computer-vision",
+    count: 0,
+    slug: "biomedical-science",
   },
   {
-    title: "Deep Learning",
-    description: "Learn about neural network architectures, training techniques, and applications in various domains.",
+    title: "Visualization Techniques",
+    description: "2D/3D animation, 3D modeling and rendering techniques, Data visualization.",
     icon: <Cpu className="h-6 w-6" />,
-    count: 15,
-    slug: "deep-learning",
+    count: 0,
+    slug: "visualization-techniques",
   },
   {
-    title: "AI Ethics",
-    description: "Examine the ethical implications of AI development and deployment in society.",
+    title: "Art",
+    description: "Honing artistic skills and finding inspiration.",
     icon: <BrainCircuit className="h-6 w-6" />,
-    count: 6,
-    slug: "ai-ethics",
+    count: 0,
+    slug: "art",
   },
   {
-    title: "Natural Language Processing",
-    description: "Explore how AI understands, generates, and interacts with human language.",
+    title: "Life",
+    description: "Journals and reflections on personal growth.",
     icon: <BrainCircuit className="h-6 w-6" />,
-    count: 9,
-    slug: "nlp",
+    count: 0,
+    slug: "life",
   },
-  {
-    title: "AI Research",
-    description: "Stay updated with the latest research papers, breakthroughs, and academic developments in AI.",
-    icon: <BrainCircuit className="h-6 w-6" />,
-    count: 11,
-    slug: "ai-research",
-  },
+
 ]
 
 export default function TopicsPage() {
@@ -140,57 +134,57 @@ export default function TopicsPage() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Artificial Intelligence
+                    Unity
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Generative AI
+                    Biomedical Science
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Computer Vision
+                    Visualization Techniques
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Deep Learning
+                    Art
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Machine Learning
+                    Life
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-medium mb-4">Resources</h3>
+              <h3 className="font-medium mb-4">Portfolio</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Tutorials
+                    AR/VR/Interactive
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Research Papers
+                   Journal Figure
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Code Samples
+                    Placeholder
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Datasets
+                   Placeholder
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white">
-                    Tools
+                   Placeholder
                   </Link>
                 </li>
               </ul>
@@ -200,13 +194,13 @@ export default function TopicsPage() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  <span>ameyaudeshmukh@gmail.com</span>
+                  <span>fabulaurora420@gmail.com</span>
                 </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-12 pt-6 text-sm text-gray-400">
-            <p>© {new Date().getFullYear()} NeuralPulse. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Jeah Aurora Kim. All rights reserved.</p>
           </div>
         </div>
       </footer>
