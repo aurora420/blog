@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const repoName = "blog" 
 const nextConfig = {
     output: "export",
     images: {
@@ -11,8 +10,9 @@ const nextConfig = {
         },
       ],
     },
-    // For GitHub Pages deployment
-    basePath: process.env.NODE_ENV === "production" ? "" : "",
+
+    basePath: "",
+    assetPrefix: "",
     trailingSlash: true,
   }
   

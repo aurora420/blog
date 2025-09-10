@@ -1,12 +1,12 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (main/docs)
 
 on:
   push:
-    branches: [main]   # deploy whenever you push to main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write      # needed to push to gh-pages branch
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -24,14 +24,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build with Next.js
+      - name: Build (Next.js static export)
         env:
-          # If this is a project site, set base path here
-          NEXT_BASE_PATH: "/REPO-NAME"
-        run: npm run build
+          NEXT_BASE_PATH: "/blog"   
+          NODE_ENV: production
+        run: |
+          npm run build
+          touch out/.nojekyll
+          echo "Built files:" && ls -R out
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to /docs on main
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages   # target branch to push the built files
-          folder: out        # this must match Next.js export folder
+          branch: main              # deploy to the SAME branch
+          folder: out               # built site
+          target-folder: docs       # publish into /docs
+          clean: true
