@@ -21,22 +21,23 @@ jobs:
           node-version: "18"
           cache: "npm"
 
+      # Keep this if you've committed package-lock.json; otherwise swap to `npm install`
       - name: Install dependencies
         run: npm ci
 
       - name: Build (Next.js static export)
         env:
-          NEXT_BASE_PATH: "/blog"   
           NODE_ENV: production
         run: |
           npm run build
           touch out/.nojekyll
-          echo "Built files:" && ls -R out
+          echo "=== out tree ==="
+          ls -R out
 
       - name: Deploy to /docs on main
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main              # deploy to the SAME branch
-          folder: out               # built site
-          target-folder: docs       # publish into /docs
+          branch: main
+          folder: out
+          target-folder: docs
           clean: true
