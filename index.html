@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intersections</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">Fabulaurora</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="https://fabulaurora.myportfolio.com/">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Category Filter -->
+  <section class="filters sticky">
+    <button class="filter-btn active" data-filter="all">All Posts</button>
+    <button class="filter-btn" data-filter="biomedical">Biomedical</button>
+    <button class="filter-btn" data-filter="technology">Technology</button>
+    <button class="filter-btn" data-filter="art">Art</button>
+  </section>
+
+  <!-- Featured Article -->
+  <section class="featured">
+    <div class="featured-card">
+      <img src="Image/JK_Cover_Banner_0.jpg" alt="Banner">
+      <div class="featured-content">
+        <span> </span>
+        <h2>About this Page</h2>
+        <p>Illustrate scientific discoveries in a fabulous way</p>
+        <div class="meta">Jeah Kim • Sep 12, 2025</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid Layout -->
+  <main class="posts-grid">
+    <!-- Post 1 -->
+    <article class="post-card" data-category="technology">
+      <img src="Image/post1-unity-pico.png" alt="Pico Neo 3 Post">
+      <div class="post-content">
+        <span class="badge technology">technology</span>
+        <h3>Learning Unity</h3>
+        <p>Head Bobbing Motion </p>
+        <div class="meta">Jeah Kim • Pico Neo 3 • Sep 12, 2025</div>
+      </div>
+    </article>
+
+    <!-- Post 2 -->
+    <article class="post-card" data-category="art">
+      <img src="Image/post2-art-ami2025.png" alt="AMI 2025 Post">
+      <div class="post-content">
+        <span class="badge art">art</span>
+        <h3>AMI 2025: Reflection</h3>
+        <p>Molecular visualization workshop, Student showcase, and talks</p>
+        <div class="meta">Jeah Kim • Grand Rapids • Jul 16-19, 2025</div>
+      </div>
+    </article>
+
+    <!-- Post 3 -->
+    <article class="post-card" data-category="art">
+      <img src="Image/post3-bm-kidney.png" alt="Anatomical Drawing">
+      <div class="post-content">
+        <span class="badge art">art</span>
+        <h3>Anatomical Drawing Dossier</h3>
+        <p>Behind the Canvas: Revealing the Workflow of Anatomical Drawing</p>
+        <div class="meta">Jeah Kim • Anatomy • 2025 </div>
+      </div>
+    </article>
+
+        <!-- Post 4 -->
+        <article class="post-card" data-category="biomedical">
+            <img src="Image/post4-placeHolder.jpg" alt="placeholder">
+            <div class="post-content">
+              <span class="badge biomedical">biomedical</span>
+              <h3>PlaceHolder</h3>
+              <p>Description</p>
+              <div class="meta">Jeah Kim • Biomedical Science • 2025 </div>
+            </div>
+          </article>
+
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
