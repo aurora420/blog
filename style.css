@@ -157,6 +157,11 @@
     color: #a21caf;
   }
   
+  .worklog {
+    background: #faeca0;
+    color: #7c4c0d;
+  }
+
 /* Pagination container */
 .pagination {
     display: flex;
