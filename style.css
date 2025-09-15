@@ -144,6 +144,12 @@
     font-weight: bold;
     text-transform: uppercase;
   }
+
+  .about {
+    background: #ffffff00;
+    color: #007f3f00;
+  }
+  
   .biomedical {
     background: #d1f5d3;
     color: #007f3f;
@@ -215,4 +221,120 @@
   }
   
 
+  /* ===== ARTICLE VIEW ===== */
+.article-view {
+  max-width: 980px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+/* Big hero with gradient overlay for readable text */
+.article-hero {
+  position: relative;
+  isolation: isolate;
+  height: clamp(220px, 35vw, 420px);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.article-hero img {
+  position: absolute; 
+  inset: 0; 
+  z-index: -1; 
+  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.article-hero::after {
+  z-index: 0;
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.65) 75%);
+}
+
+.hero-content {
+  position: absolute; z-index: 1; left: 0; right: 0; bottom: 0;
+  padding: 1.5rem 1.75rem 1.75rem;
+  color: #fff;
+}
+/* Title + meta: slight halo + stronger size/weight */
+.hero-title {
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: .01em;
+  text-wrap: balance;                 /* modern browsers: nicer line breaks */
+  text-shadow:
+    0 12px 28px rgba(0,0,0,.55),
+    0 3px 8px   rgba(0,0,0,.55);
+}
+.hero-meta {
+  font-weight: 700;
+  opacity: 1;                         /* was .95; make fully opaque */
+  text-shadow: 0 2px 6px rgba(0,0,0,.55);
+}
+
+
+/* Article body */
+.article-body {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  color: #2b2b2b;
+}
+.article-body p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 1rem 0;
+  color: #3a3a3a;
+}
+.article-body .lead {
+  color: #6b7280;
+  font-size: 1.05rem;
+  margin-top: .75rem;
+}
+
+/* Author box */
+.author-box {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: .75rem;
+  align-items: center;
+  padding-top: 1.5rem;
+  margin-top: 1.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+.author-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: grid; place-items: center;
+  font-weight: 800; color: #555;
+}
+
+/* Back to Posts */
+.back-row {
+  display: flex; align-items: center; gap: .5rem;
+  margin: 1rem 0 .25rem;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  text-decoration: none;
+  font-weight: 700; color: #111;
+}
+.back-link:hover { text-decoration: underline; }
+
+
+/* Make the invisible link fill the entire card */
+.post-card, .featured-card { position: relative; }
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: block;
+  text-indent: -9999px; 
+}
+.card-overlay:focus-visible {
+  outline: 3px solid #7c3aed; outline-offset: 2px; border-radius: 12px;
+}
   

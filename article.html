@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Intersections — Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">Fabulaurora</div>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="https://fabulaurora.myportfolio.com/">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Article container -->
+  <section id="article-view" class="article-view" aria-live="polite">
+    <!-- JS will render the article here -->
+  </section>
+
+  <noscript>
+    <p style="max-width:42rem;margin:1rem auto;padding:1rem;background:#fff3cd;border:1px solid #ffeeba;border-radius:.5rem;">
+      This page requires JavaScript to load the article content from <code>data/posts.json</code>.
+    </p>
+  </noscript>
+
+  <script>
+    // ------- Config -------
+    const INDEX_URL = 'data/posts.json';
+
+    // ------- Helpers -------
+    const qs = (sel, el = document) => el.querySelector(sel);
+    const initials = (name = '') =>
+      name.split(' ').filter(Boolean).map(s => s[0]).join('').slice(0,3).toUpperCase() || 'AU';
+    const badgeClass = (cat) => ({ biomedical:'biomedical', technology:'technology', art:'art', worklog:'worklog' }[cat] || 'biomedical');
+
+    function getParam(key) {
+      const params = new URLSearchParams(location.search);
+      return params.get(key);
+    }
+
+    function renderNotFound() {
+      qs('#article-view').innerHTML = `
+        <div class="back-row"><a class="back-link" href="index.html#posts">‹ Back to Posts</a></div>
+        <article>
+          <div class="article-body">
+            <h1 class="hero-title" style="margin-top:1rem">Article not found</h1>
+            <p>We couldn’t find the article you were looking for. It may have been moved or the link is incorrect.</p>
+          </div>
+        </article>
+      `;
+      document.title = 'Not found — 404';
+    }
+
+    function renderArticle(post) {
+      const {
+        title, category, hero, imageAlt, author, authorRole, location, date,
+        lead, content, html, credit
+      } = post;
+
+      // Build body: prefer html, else array of paragraphs
+      const bodyHTML = html
+        ? html
+        : (Array.isArray(content) ? content.map(p => `<p>${p}</p>`).join('') : '');
+
+      const creditHTML = credit
+        ? `<div style="position:absolute;right:.75rem;bottom:.5rem;color:#fff;opacity:.8;font-size:.8rem;">${credit}</div>`
+        : '';
+
+      qs('#article-view').innerHTML = `
+        <div class="back-row"><a class="back-link" href="index.html#posts">‹ Back to Posts</a></div>
+
+        <article>
+          <div class="article-hero">
+            ${hero ? `<img src="${hero}" alt="${imageAlt || title}">` : ''}
+            <div class="hero-content">
+              <span class="badge ${badgeClass(category)}">${category}</span>
+              <h1 class="hero-title">${title}</h1>
+              <div class="hero-meta">
+                ${author ? author : ''} ${location ? '• ' + location : ''} ${date ? '• ' + date : ''}
+              </div>
+            </div>
+            ${creditHTML}
+          </div>
+
+          <div class="article-body">
+            ${lead ? `<p class="lead">${lead}</p>` : ''}
+            ${bodyHTML}
+            <div class="author-box">
+              <div class="author-avatar">${initials(author)}</div>
+              <div>
+                <div style="font-weight:700">${author || 'Guest Author'}</div>
+                <div style="color:#6b7280">${authorRole || ''}</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+
+      document.title = `${title} — Intersections`;
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    async function load() {
+      // Support both ?slug=... and ?id=...
+      const slug = getParam('slug');
+      const id   = getParam('id');
+
+      let posts;
+      try {
+        const res = await fetch(INDEX_URL, { cache: 'no-cache' });
+        const json = await res.json();
+        posts = json.posts || [];
+      } catch (e) {
+        renderNotFound();
+        return;
+      }
+
+      // Find by id or slug
+      let post = null;
+      if (id)   post = posts.find(p => p.id === id);
+      if (!post && slug) post = posts.find(p => p.slug === slug);
+
+      // Fallback: if neither provided, try the first featured or first post
+      if (!post) post = posts.find(p => p.featured) || posts[0];
+
+      if (!post) { renderNotFound(); return; }
+      renderArticle(post);
+    }
+
+    load();
+  </script>
+</body>
+</html>

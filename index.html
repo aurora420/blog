@@ -19,6 +19,8 @@
     </nav>
   </header>
 
+  <div id="list-view">
+
   <!-- Category Filter -->
   <section class="filters sticky">
     <button class="filter-btn active" data-filter="all">All Posts</button>
@@ -31,9 +33,10 @@
   <!-- Featured Article -->
   <section class="featured">
     <div class="featured-card">
+      <a class="card-overlay" href="article.html?slug=about-this-page" aria-label="Open article: About this Page"></a>
       <img src="Image/JK_Cover_Banner_0.jpg" alt="Banner">
       <div class="featured-content">
-        <span> </span>
+        <span class="badge about"> </span>
         <h2>About this Page</h2>
         <p>Illustrate scientific discoveries in a fabulous way</p>
         <div class="meta">Jeah Kim • Sep 12, 2025</div>
@@ -45,7 +48,8 @@
   <main class="posts-grid">
     <!-- Post 1 -->
     <article class="post-card" data-category="technology">
-      <img src="Image/post1-unity-pico.png" alt="Pico Neo 3 Post">
+    <a class="card-overlay" href="article.html?slug=learning-unity" aria-label="Open article: Learning Unity"></a>  
+    <img src="Image/post1-unity-pico.png" alt="Pico Neo 3 Post">
       <div class="post-content">
         <span class="badge technology">technology</span>
         <h3>Learning Unity</h3>
@@ -56,6 +60,7 @@
 
     <!-- Post 2 -->
     <article class="post-card" data-category="art">
+      <a class="card-overlay" href="article.html?slug=ami-2025-reflection" aria-label="Open article: AMI 2025: Reflection"></a>
       <img src="Image/post2-art-ami2025.png" alt="AMI 2025 Post">
       <div class="post-content">
         <span class="badge art">art</span>
@@ -67,6 +72,7 @@
 
     <!-- Post 3 -->
     <article class="post-card" data-category="art">
+      <a class="card-overlay" href="article.html?slug=anatomical-drawing-dossier" aria-label="Open article: Anatomical Drawing Dossier"></a>
       <img src="Image/post3-bm-kidney.png" alt="Anatomical Drawing">
       <div class="post-content">
         <span class="badge art">art</span>
@@ -101,13 +107,14 @@
 
 
 
-
      
     <!-- Pagination -->
           <nav id="pagination" class="pagination" aria-label="Pagination"></nav>
           
-  </main>
 
+</main>
+
+</div>
 
 
   <script src="script.js"></script>

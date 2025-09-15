@@ -1,0 +1,88 @@
+{
+  "posts": [
+
+    {
+      "id": "p000",
+      "slug": "about-this-page",
+      "title": "About this Page",
+      "category": "About",
+      "hero": "Image/JK_Cover_Banner_0.jpg",
+      "imageAlt": "cover art",
+      "location": " ",
+      "date": "Sep 12, 2025",
+      "author": "Jeah Kim",
+      "authorRole": "Contributing author exploring the intersections of science, technology, and art.",
+      "excerpt": "Illustrate scientific discoveries in a fabulous way",
+      "lead": "A quick tour of why Intersections exists and how stories come together across biomedicine, technology, and art.",
+      "content": [
+        "Intersections is a magazine-style personal site that curates work and writing across three domains…",
+        "Each post balances clarity and craft — visuals serve the science, not the other way around…",
+        "Expect process write-ups, working documents, and essays on design decisions that shape outcomes."
+      ],
+      "featured": true
+    },
+
+
+    {
+      "id": "p001",
+      "slug": "learning-unity",
+      "title": "Learning Unity",
+      "category": "technology",
+      "hero": "Image/post1-unity-pico.png",
+      "imageAlt": "Pico Neo 3 Post",
+      "location": "15 min read",
+      "date": "Sep 12, 2025",
+      "author": "Jeah Kim",
+      "authorRole": "Interactive XR designer and biomedical communicator.",
+      "excerpt": "Head Bobbing Motion",
+      "lead": "Head-bobbing locomotion experiments on Pico Neo 3…",
+      "content": [
+        "This article documents the locomotion prototype built around head bobbing…",
+        "We tuned stride detection thresholds, smoothed velocity, and aligned camera bob with step cadence…",
+        "What worked: simple signal processing and short feedback loops. What didn’t: overfitting to a single headset."
+      ],
+      "featured": false
+    },
+    {
+      "id": "p002",
+      "slug": "ami-2025-reflection",
+      "title": "AMI 2025: Reflection",
+      "category": "art",
+      "hero": "Image/post2-art-ami2025.png",
+      "imageAlt": "AMI 2025 Post",
+      "location": "8 min read",
+      "date": "Jul 19, 2025",
+      "author": "Jeah Kim",
+      "authorRole": "Biomedical visualization and narrative design.",
+      "excerpt": "Molecular visualization workshop, Student showcase, and talks",
+      "lead": "Notes from workshops, showcases, and talks — where molecular visualization met storytelling.",
+      "content": [
+        "The student showcase highlighted narrative clarity over technical complexity…",
+        "Workshops emphasized pipeline pragmatism: iterate in low-fidelity, commit late to polish…",
+        "Key takeaway: treat accuracy and aesthetics as partners, not tradeoffs."
+      ],
+      "featured": false
+    },
+    {
+      "id": "p003",
+      "slug": "anatomical-drawing-dossier",
+      "title": "Anatomical Drawing Dossier",
+      "category": "art",
+      "hero": "Image/post3-bm-kidney.png",
+      "imageAlt": "Anatomical Drawing",
+      "location": "12 min read",
+      "date": "2025",
+      "author": "Jeah Kim",
+      "authorRole": "Anatomy-driven illustration.",
+      "excerpt": "Behind the Canvas: Revealing the Workflow of Anatomical Drawing",
+      "lead": "Behind the canvas: a working document for planning, reference gathering, and refinement.",
+      "content": [
+        "The dossier starts with intent: what function should the drawing serve?",
+        "Layout thumbnails focus on relationships first, detail last…",
+        "Feedback checkpoints ensure clinical correctness before rendering."
+      ],
+      "featured": false
+    }
+
+  ]
+}
