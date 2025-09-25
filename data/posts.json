@@ -26,20 +26,21 @@
     {
       "id": "p001",
       "slug": "learning-unity",
-      "title": "Learning Unity",
-      "category": "technology",
+      "title": "Head Bobbing Motion",
+      "category": "worklog",
       "hero": "Image/post1-unity-pico.png",
       "imageAlt": "Pico Neo 3 Post",
-      "location": "15 min read",
-      "date": "Sep 12, 2025",
+      "location": "Pico Neo 3",
+      "date": "Sep 25, 2025",
       "author": "Jeah Kim",
       "authorRole": "Interactive XR designer and biomedical communicator.",
-      "excerpt": "Head Bobbing Motion",
-      "lead": "Head-bobbing locomotion experiments on Pico Neo 3…",
+      "excerpt": "Head Bobbing",
+      "lead": "Learning Unity - VR Locomotion",
       "content": [
-        "This article documents the locomotion prototype built around head bobbing…",
-        "We tuned stride detection thresholds, smoothed velocity, and aligned camera bob with step cadence…",
-        "What worked: simple signal processing and short feedback loops. What didn’t: overfitting to a single headset."
+        "While many motion-tracking accessories exist today, the goal here was to track footsteps while user walk in place using only the VR headset. To get there, I referred to a <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S014193822400307X\">study</a> that evaluated a VR bobbing mechanism where participants adjusted oscillation amplitudes for comfort. The findings showed a strong preference for vertical oscillation, with consistent amplitudes across speeds (±0.695 cm for walking and ±1.351 cm for running), while lateral roll varied more (±0.186° for walking and ±0.334° for running).",
+        "Building on this, I focused on two key factors for replicating natural walking:",
+        "1. Vertical oscillation—the up-and-down head movement", 
+        "2. Lateral rotation—the subtle rolling motion of the head"
       ],
       "featured": false
     },
